@@ -5,12 +5,12 @@ for tc in range(1, 1+t):
     a = list(map(int,input().split()))
     b = list(map(int,input().split()))
     
-    if n > m:
-        n, m = m, n
-        a, b = b, a
+    if n > m:                              # a의 갯수와 n값이 항상 작도록
+        n, m = m, n                        # 길이 바꿈
+        a, b = b, a                        # 숫자열 바꿈
 
-    mov = m-n + 1
-    maxi = -float('inf')
+    mov = m-n + 1                          # 움직일 수 있는 범위
+    maxi = -float('inf')                   # 최댓값 저장
 
     for j in range(mov):
         c = 0
