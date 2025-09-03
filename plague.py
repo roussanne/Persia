@@ -1,30 +1,19 @@
 t = int(input())
-t =1
-c =0
+
 for tc in range(1, 1+t):
     size = int(input())
-    asdff=[]
-    asdf=[]
-    centre = size//2
-
+    asdff=[]                                     # 전체 리스트
+    asdf=[]                                      # 행 리스트
+    centre = size//2                             # 가운데값
+    c = 0                                        # 합계
+                                     
     for i in range(size):
-        asdf = list(map(int,input()))
-        asdff.append(asdf)
+        asdf = list(map(int,input()))            # 행 입력
+        asdff.append(asdf)                       # 전체 리스트에 추가
+        
+        dt = abs(centre - i)                     # 중심에서 거리
+        for j in range(dt, size - dt):           # 열 만큼 반복
+            c += asdff[i][j]
 
-    for j in range(centre//2):
-        c = asdf[centre-j] + asdf[centre] + asdf[centre+j]
-            
-        print(asdff)
-        print(c)
+    print(f"#{tc} {c}")
 
-
-        print(asdff[centre-1])
-        print(asdff[centre])
-        print(asdff[centre+1])
-
-
-    1 4 0 5 4
-    4 4 2 5 0
-    0 2 0 3 2
-    5 1 2 0 4
-    5 2 2 1 2
