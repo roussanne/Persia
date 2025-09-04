@@ -1,6 +1,6 @@
 t = int(input().strip())
 
-for tc in range(1, t+1):
+for tc in range(1, 1 + t):
 
     n = input()
     arr = input().strip()
