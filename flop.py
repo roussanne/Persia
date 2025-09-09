@@ -8,18 +8,18 @@ for tc in range(1, t+1):
     
     for _ in range(m):
         i, j = map(int, input().split())
-        i -= 1
+        i -= 1                                # 탐색 for문 1부터 시작
         
         for k in range(1, j+1):
-            left = i - k
+            left = i - k 
             right = i + k
             
-            if left < 0 or right >= n:
+            if left < 0 or right >= n:        # list 탐색 범위제한
                 break
             
-            if arr[left] == arr[right]:
-                arr[left] = 1 - arr[left]
-                arr[right] = 1 - arr[right]
+            if arr[left] == arr[right]:       # left right 같으면 
+                arr[left] = 1 - arr[left]     # flip
+                arr[right] = 1 - arr[right]   # flop
     
     
     print(f"#{tc}", *arr)
