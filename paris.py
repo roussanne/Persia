@@ -3,7 +3,7 @@
 t = int(input())
 
 for tc in range(1, t + 1):
-    d, a, b, f = map(int, input().split())
-    time = d / (a + b)
-    paris = time * f
+    d, a, b, f = map(int, input().split()) # d distance, a train A speed , b train B speed, f paris speed
+    time = d / (a + b)                     # collision time
+    paris = time * f                       # paris flight distant
     print(f"#{tc} {paris}")
