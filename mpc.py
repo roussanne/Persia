@@ -62,6 +62,26 @@ for tc in range(1, 1+t):
             visited[j] = False
 
 
+
+def dfs(i, total):
+    global ans
+    # 가지치기: 이미 최소비용보다 크면 중단
+    if total >= ans:
+        return
+    
+    # 모든 공장에 배정 완료
+    if i == n:
+        ans = min(ans, total)
+        return
+    
+    # i번 공장에 j번 제품 배정
+    for j in range(n):
+        if not visited[j]:
+            visited[j] = True
+            dfs(i+1, total + arr[i][j])
+            visited[j] = False
+
+
 T = int(input())
 for tc in range(1, T+1):
     n = int(input())
