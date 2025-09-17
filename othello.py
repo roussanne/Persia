@@ -7,7 +7,7 @@ def in_range(n, r, c):                  # 범위 n 안에서 탐색
 
 def hor(board, r, c, color):            # 
     n = len(board)
-    opp = 2 if color == 1 else 1
+    opp = 2 if color == 1 else 1        # 상대 2, if 내가 1 else 나 2 상대 1
 
     # right
     captured = []
@@ -99,60 +99,3 @@ for tc in range(1, 1 + t):
 
 
 
-
-
-# import sys
-# sys.stdin = open("input.txt")
-
-# # 8방향 (상,하,좌,우, 대각선)
-# dirs = [(-1,-1), (-1,0), (-1,1),
-#         ( 0,-1),         ( 0, 1),
-#         ( 1,-1), ( 1,0), ( 1, 1)]
-
-# def in_range(n, r, c):
-#     return 0 <= r < n and 0 <= c < n
-
-# def flip(board, r, c, color):
-#     """(r,c)에 color 돌을 놓고 뒤집기 처리"""
-#     n = len(board)
-#     board[r][c] = color  # 돌 놓기
-#     opp = 2 if color == 1 else 1  # 상대 색
-
-#     for dr, dc in dirs:
-#         rr, cc = r + dr, c + dc
-#         captured = []
-
-#         # 옆칸이 상대 돌일 때만 진행
-#         while in_range(n, rr, cc) and board[rr][cc] == opp:
-#             captured.append((rr, cc))
-#             rr += dr
-#             cc += dc
-
-#         # 끝이 내 돌이면 뒤집기
-#         if in_range(n, rr, cc) and board[rr][cc] == color:
-#             for cr, cc in captured:
-#                 board[cr][cc] = color
-
-
-# t = int(input())
-# for tc in range(1, 1 + t):
-#     n, m = map(int, input().split())
-#     board = [[0] * n for _ in range(n)]
-
-#     # 초기 세팅
-#     mid = n // 2
-#     board[mid][mid] = 2
-#     board[mid-1][mid-1] = 2
-#     board[mid-1][mid] = 1
-#     board[mid][mid-1] = 1
-
-#     for _ in range(m):
-#         x, y, c = map(int, input().split())
-#         # 입력은 (열=x, 행=y), 1-index
-#         r, c = y-1, x-1
-#         flip(board, r, c, c)
-
-#     # 결과 세기
-#     black = sum(row.count(1) for row in board)
-#     white = sum(row.count(2) for row in board)
-#     print(f"#{tc} {black} {white}")
